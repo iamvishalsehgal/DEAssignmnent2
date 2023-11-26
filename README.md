@@ -17,5 +17,12 @@ To stop the cluster:
 
 To connect to Jupyter Lab (Spark App and Driver) run: `sudo docker logs spark-driver-app`
 
+
+1st pipeline: batch data processing pipeline
+2nd pipeline: stream data processing pipeline 
+    - we are using KAFKA to produce and consume data (1st run admin, then start notebook, then run producer and in the end run consumer)
+    - check spark jobs by accessing it on YOUR_VM:4040/jobs/ 
+    
+
 Data has been taken from: 
 https://www.kaggle.com/datasets/nathanlauga/nba-games/data (still APA references to be added)
