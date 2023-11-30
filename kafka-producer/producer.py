@@ -1,5 +1,5 @@
 from kafka import KafkaProducer
-
+import json
 
 def kafka_python_producer_sync(producer, msg, topic):
     producer.send(topic, bytes(msg, encoding='utf-8'))
@@ -21,11 +21,14 @@ def kafka_python_producer_async(producer, msg, topic):
 
 
 if __name__ == '__main__':
-    producer = KafkaProducer(bootstrap_servers='34.132.88.158:9092')  # use your VM's external IP Here!
-    with open('C:/Users/48504/Desktop/JADSMaster/DataEngineering/games_details.json') as f:   # change this path to the path in your laptop
-        lines = f.readlines()
+    producer = KafkaProducer(bootstrap_servers='34.72.160.232:9092')  # use your VM's external IP Here!
+    # value_serializer = lambda v: json.dumps(v).encode('utf-8')
+    with open('your_path_to_data/games_details.json') as f:   # change this path to the path in your laptop
+        json_data = json.load(f)
 
-    for line in lines:
-        kafka_python_producer_sync(producer, line, 'games_details')
-
+        # Process each JSON object in the file
+    for data in json_data:
+        print('Is this a JSON object? ', data)
+        # Use your Kafka producer function here to send each JSON object
+        kafka_python_producer_sync(producer, json.dumps(data), 'games_details')
     f.close()
