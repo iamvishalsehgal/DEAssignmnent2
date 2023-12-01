@@ -21,9 +21,9 @@ def kafka_python_producer_async(producer, msg, topic):
 
 
 if __name__ == '__main__':
-    producer = KafkaProducer(bootstrap_servers='34.72.160.232:9092')  # use your VM's external IP Here!
+    producer = KafkaProducer(bootstrap_servers='35.226.94.63:9092')  # use your VM's external IP Here!
     # value_serializer = lambda v: json.dumps(v).encode('utf-8')
-    with open('your_path_to_data/games_details.json') as f:   # change this path to the path in your laptop
+    with open('C:/Users/48504/Desktop/JADSMaster/DataEngineering/games_details.json') as f:   # change this path to the path in your laptop
         json_data = json.load(f)
 
         # Process each JSON object in the file

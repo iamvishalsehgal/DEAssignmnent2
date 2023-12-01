@@ -8,6 +8,9 @@ Virtual machine used in this assignment:
 - Machine type: e2-standard-4
 - Architecture: x86/64
 
+Kafkacat was used to understand and debugg kafka processes `sudo apt install kafkacat`
+
+
 Prerequisities:
  - Docker and docker compose must be installed. (`sh docker.sh` and `sh docker_compose.sh`)
 External IP as well as home directory must be specified in the .env file
