@@ -46,7 +46,7 @@ class KafkaMessageConsumer(Thread):
 
     def __init__(self, topic):
         Thread.__init__(self)
-        self.consumer = KafkaConsumer(bootstrap_servers='35.226.94.63:9092',  # use your VM's external IP Here!
+        self.consumer = KafkaConsumer(bootstrap_servers='34.29.182.46:9092',  # use your VM's external IP Here!
                                       auto_offset_reset='latest',
                                       consumer_timeout_ms=10000)
 
